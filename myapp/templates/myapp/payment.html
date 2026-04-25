@@ -12,6 +12,7 @@ body{background:#C1D8C3;font-family:Arial;}
     background:white;
     padding:20px;
     margin-top:50px;
+    border-radius:10px;
 }
 
 input,select,button{
@@ -35,20 +36,17 @@ button{
 
 <form method="POST">
 {% csrf_token %}
-
-<input placeholder="Name">
+<input placeholder="Card Name">
 <input placeholder="Card Number">
 <input placeholder="Expiry">
 <input placeholder="CVV">
-
 <select>
 <option>UPI</option>
 <option>Card</option>
 </select>
-
 <button>Pay Now</button>
-
 </form>
+
 </div>
 
 </body>
