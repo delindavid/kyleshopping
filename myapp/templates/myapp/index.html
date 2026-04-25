@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome | Kyle</title>
+
+    <style>
+        body{ background-color: #C1D8C3; }
+        h1{
+            font-size: 80px;
+            text-align: center;
+            font-family: Viner Hand ITC;
+            margin-top: 65px;
+            color: #628141;
+            text-shadow: 1px 1px 5px #628141;
+        }
+        h2{
+            font-size: 25px;
+            text-align: center;
+            font-family: Lucida Calligraphy;
+            color: #8ABB6C;
+        }
+        img{
+            width: 330px;
+            height: 330px;
+            display: block;
+            margin: auto;
+        }
+        .entry-box1,.entry-box2{
+            display: block;
+            margin: 20px auto;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .button{
+            display: block;
+            margin: 30px auto;
+            padding: 6px;
+            width: 100px;
+            background-color: #98D8EF;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Welcome to Kyle</h1>
+    <h2>a women's destiny</h2>
+
+    <img src="{% static 'myapp/images/access.png' %}" alt="access">
+
+    <form method="post">
+        {% csrf_token %}
+        <input type="email" name="email" class="entry-box1" placeholder="Email" required>
+        <input type="password" name="password" class="entry-box2" placeholder="Password" required>
+        <button type="submit" class="button">Log in</button>
+    </form>
+</body>
+</html>

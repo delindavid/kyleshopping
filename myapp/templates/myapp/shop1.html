@@ -1,0 +1,290 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeweleries</title>
+</head>
+
+<style>
+    body{
+        background-color: #C1D8C3;
+        margin: 0;
+    }
+
+    /* NAVBAR */
+    .navbar{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #628141;
+        padding: 15px 40px;
+        color: white;
+    }
+
+    .logo{
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    .nav-links{
+        display: flex;
+        gap: 25px;
+    }
+
+    .nav-links a{
+        text-decoration: none;
+        color: white;
+    }
+
+    h1{
+        font-size: 55px;
+        text-align: center;
+        font-family: Lucida Calligraphy;
+        margin-top: 25px;
+        color: #628141;
+        text-shadow: 1px 1px 2px #8ABB6C;
+    }
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .box{
+        width: 950px;
+        height: 350px;
+        padding: 40px;
+        background-color: aliceblue;
+        margin-left: 180px;
+        margin-top: 50px;
+
+        display: flex;
+        align-items: center;
+        gap: 40px;
+    }
+
+    img{
+        width: 250px;
+        height: 250px;
+    }
+
+    a{
+        font-size: 20px;
+        margin-top: 10px;
+        display: block;
+        margin-left: 75px;
+        text-decoration: none;
+        color: black;
+    }
+
+    .left{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .right{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .desc{
+        font-size: 16px;
+        color: #555;
+        margin: 0;
+    }
+
+    .details{
+        padding-left: 20px;
+        margin: 0;
+        font-size: 14px;
+    }
+
+    .price{
+        font-size: 20px;
+        font-weight: bold;
+        color: #2e7d32;
+    }
+
+    .buttons{
+        margin-top: 10px;
+        display: flex;
+        gap: 10px;
+    }
+
+    .btn{
+        padding: 8px 15px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    .cart{
+        background-color: #ff9800;
+        color: white;
+    }
+
+    .buy{
+        background-color: #4caf50;
+        color: white;
+    }
+
+</style>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="logo">KYLE's SHOPPING</div>
+
+    <div class="nav-links">
+        <a href="{% url 'shop' %}">Home</a>
+        <a href="#">Cart 🛒</a>
+        <a href="#">Profile 👤</a>
+    </div>
+</div>
+
+<h1>JEWELERIES</h1>
+
+<div class="container">
+
+    <div class="box">
+        <div class="left">
+            <img src="{% static 'myapp/images/Necklace.png' %}">
+            <a>Gold Necklace</a>
+        </div>
+
+        <div class="right">
+            <p class="desc">Elegant gold-plated necklace with fine craftsmanship.</p>
+
+            <ul class="details">
+                <li><b>Material:</b> Gold Plated Alloy</li>
+                <li><b>Length:</b> 18 inches</li>
+                <li><b>Weight:</b> 25g</li>
+                <li><b>Occasion:</b> Wedding / Party</li>
+            </ul>
+
+            <p class="price">₹2,499</p>
+
+            <div class="buttons">
+                <button class="btn cart">Add to Cart</button>
+                <a href="{% url 'payment' %}">
+                    <button class="btn buy">Buy Now</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="box">
+        <div class="left">
+            <img src="{% static 'myapp/images/earing.jpg' %}">
+            <a>Jhumka Earing</a>
+        </div>
+
+        <div class="right">
+            <p class="desc">Traditional oxidized jhumka earrings.</p>
+
+            <ul class="details">
+                <li><b>Material:</b> Oxidized Silver</li>
+                <li><b>Length:</b> 5 cm</li>
+                <li><b>Weight:</b> 15g</li>
+            </ul>
+
+            <p class="price">₹799</p>
+
+            <div class="buttons">
+                <button class="btn cart">Add to Cart</button>
+                <a href="{% url 'payment' %}">
+                    <button class="btn buy">Buy Now</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="box">
+        <div class="left">
+            <img src="{% static 'myapp/images/Ring.png' %}">
+            <a>Minimal Ring</a>
+        </div>
+
+        <div class="right">
+            <p class="desc">Stylish adjustable ring with minimalist design.</p>
+
+            <ul class="details">
+                <li><b>Material:</b> Steel</li>
+                <li><b>Size:</b> Adjustable</li>
+                <li><b>Weight:</b> 10g</li>
+            </ul>
+
+            <p class="price">₹499</p>
+
+            <div class="buttons">
+                <button class="btn cart">Add to Cart</button>
+                <a href="{% url 'payment' %}">
+                    <button class="btn buy">Buy Now</button>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+    <div class="left">
+        <img src="{% static 'myapp/images/Bracelet.png' %}">
+        <a>Charm Bracelet</a>
+    </div>
+
+    <div class="right">
+        <p class="desc">Delicate bracelet with sparkling stones for everyday elegance.</p>
+
+        <ul class="details">
+            <li><b>Material:</b> Gold Plated</li>
+            <li><b>Length:</b> 7 inches</li>
+            <li><b>Weight:</b> 12g</li>
+            <li><b>Occasion:</b> Casual / Party</li>
+        </ul>
+
+        <p class="price">₹1,299</p>
+
+        <div class="buttons">
+            <button class="btn cart">Add to Cart</button>
+            <a href="{% url 'payment' %}">
+                <button class="btn buy">Buy Now</button>
+            </a>
+        </div>
+    </div>
+</div>
+    <div class="box">
+    <div class="left">
+        <img src="{% static 'myapp/images/Bangles.jpg' %}">
+        <a>Gold Bangles</a>
+    </div>
+
+    <div class="right">
+        <p class="desc">Classic gold bangles with detailed pattern design.</p>
+
+        <ul class="details">
+            <li><b>Material:</b> Gold Plated</li>
+            <li><b>Size:</b> Standard</li>
+            <li><b>Weight:</b> 40g</li>
+            <li><b>Occasion:</b> Wedding / Traditional</li>
+        </ul>
+
+        <p class="price">₹2,999</p>
+
+        <div class="buttons">
+            <button class="btn cart">Add to Cart</button>
+            <a href="{% url 'payment' %}">
+                <button class="btn buy">Buy Now</button>
+            </a>
+        </div>
+    </div>
+</div>
+
+</div>
+
+</body>
+</html>
