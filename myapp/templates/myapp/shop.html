@@ -1,141 +1,71 @@
 {% load static %}
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kyle Shopping</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-    body{
-        background-color: #C1D8C3;
-        margin: 0;
-    }
-    .navbar{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: #628141;
-        padding: 15px 40px;
-        color: white;
-    }
+body{margin:0;background:#C1D8C3;}
 
-    .logo{
-        font-size: 22px;
-        font-weight: bold;
-    }
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    padding:15px;
+    background:#628141;
+    color:white;
+}
 
-    .nav-links{
-        display: flex;
-        gap: 25px;
-    }
+.container{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    padding:20px;
+}
 
-    .nav-links a{
-        text-decoration: none;
-        color: white;
-        font-size: 16px;
-    }
+.box{
+    background:white;
+    padding:20px;
+    text-align:center;
+}
 
-    .nav-links a:hover{
-        text-decoration: underline;
-    }
+img{width:100%;height:200px;object-fit:cover;}
 
-    h1{
-        font-size: 55px;
-        text-align: center;
-        font-family: Lucida Calligraphy;
-        margin-top: 25px;
-        color: #628141;
-        text-shadow: 1px 1px 2px #8ABB6C;
-    }
-
+/* MOBILE */
+@media(max-width:768px){
     .container{
-        display: flex;
-        gap: 80px;
+        grid-template-columns:1fr;
     }
-
-    .box{
-        width: 250px;
-        height: 300px;
-        padding: 40px;
-        background-color: aliceblue;
-        margin-top: 50px;
-        text-align: center;
-    }
-
-    .first{
-        margin-left: 180px;
-    }
-
-    .second-row{
-        margin-top: 100px;
-    }
-
-    img{
-        width: 250px;
-        height: 250px;
-    }
-
-    a{
-        display: block;
-        text-align: center;
-        font-size: 20px;
-        margin-top: 10px;
-        text-decoration: none;
-        color: black;
-    }
-
+}
 </style>
 </head>
 
 <body>
 
-    <div class="navbar">
-        <div class="logo">KYLE's SHOPPING</div>
+<div class="navbar">
+    <div>KYLE</div>
+    <div>Cart 🛒</div>
+</div>
 
-        <div class="nav-links">
-            <a href="#">Categories</a>
-            <a href="#">Cart 🛒</a>
-            <a href="#">Profile 👤</a>
-        </div>
-    </div>
+<div class="container">
 
-    <h1>KYLE's SHOPPING</h1>
-    <div class="container">
-        <div class="box first">
-            <a href="{% url 'shop1' %}">
-                <img src="{% static 'myapp/images/jewelery.png' %}" alt="jewelery">
-            </a>
-            <a href="{% url 'shop1' %}">Jeweleries</a>
-        </div>
+<div class="box">
+<a href="{% url 'shop1' %}">
+<img src="{% static 'myapp/images/jewelery.png' %}">
+</a>
+<p>Jeweleries</p>
+</div>
 
-        <div class="box">
-            <img src="{% static 'myapp/images/watch.png' %}">
-            <a>Watches</a>
-        </div>
+<div class="box">
+<img src="{% static 'myapp/images/watch.png' %}">
+<p>Watches</p>
+</div>
 
-        <div class="box">
-            <img src="{% static 'myapp/images/heels.png' %}">
-            <a>Footwears</a>
-        </div>
-    </div>
-    <div class="container second-row">
-        <div class="box first">
-            <img src="{% static 'myapp/images/sunglass.png' %}">
-            <a>Sunglasses</a>
-        </div>
+<div class="box">
+<img src="{% static 'myapp/images/heels.png' %}">
+<p>Footwears</p>
+</div>
 
-        <div class="box">
-            <img src="{% static 'myapp/images/hairclips.png' %}">
-            <a>Hairclips</a>
-        </div>
-
-        <div class="box">
-            <img src="{% static 'myapp/images/perfume.png' %}">
-            <a>Perfumes</a>
-        </div>
-    </div>
+</div>
 
 </body>
 </html>

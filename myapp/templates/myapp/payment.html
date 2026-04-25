@@ -1,69 +1,54 @@
-{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Payment</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-body{
-    font-family: Arial;
-    background-color: #C1D8C3;
-}
+body{background:#C1D8C3;font-family:Arial;}
 
 .container{
-    width: 400px;
-    margin: 80px auto;
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
+    max-width:400px;
+    margin:auto;
+    background:white;
+    padding:20px;
+    margin-top:50px;
 }
 
-h2{
-    text-align: center;
-}
-
-input, select{
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
+input,select,button{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
 }
 
 button{
-    width: 100%;
-    padding: 10px;
-    background: green;
-    color: white;
-    border: none;
-    cursor: pointer;
+    background:green;
+    color:white;
+    border:none;
 }
-
 </style>
 </head>
 
 <body>
 
 <div class="container">
-    <h2>Payment Details</h2>
+<h2>Payment</h2>
 
-    <form method="POST">
-        {% csrf_token %}
+<form method="POST">
+{% csrf_token %}
 
-        <input type="text" name="name" placeholder="Card Holder Name" required>
+<input placeholder="Name">
+<input placeholder="Card Number">
+<input placeholder="Expiry">
+<input placeholder="CVV">
 
-        <input type="text" name="card" placeholder="Card Number" required>
+<select>
+<option>UPI</option>
+<option>Card</option>
+</select>
 
-        <input type="text" name="expiry" placeholder="MM/YY" required>
+<button>Pay Now</button>
 
-        <input type="password" name="cvv" placeholder="CVV" required>
-
-        <select name="method">
-            <option>Credit Card</option>
-            <option>Debit Card</option>
-            <option>UPI</option>
-        </select>
-
-        <button type="submit">Pay Now</button>
-    </form>
+</form>
 </div>
 
 </body>
